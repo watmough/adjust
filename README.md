@@ -7,6 +7,8 @@ adjust
 
 a tiny utility for adjusting attributes in the terminal.
 usage: adjust <attribute>
+       left/right cursor keys to decrement/increment
+       q to quit
 
 Function: display minimal text ui outputting saved/adjusted attribute 
 value to a preconfigured command. q to end.
@@ -19,7 +21,7 @@ replaced by the value.
 
 Bugs/Issues: There is very little error checking, as this is really just
 a personal tool
-No conmfiguration except by editing additional attributes into the
+No configuration except by editing additional attributes into the
 ~/.adjustments configuration file.
 If you want to run it as a normal user, you'll likely need to change the 
 owner / permissions to SUID.
@@ -34,13 +36,13 @@ Examples of items that can be adjusted by this tool
     Command to use: echo value > /sys/class/backlight/nvidia_0/brightness
     Reasonable value range: 15 to 95 by 5 default 20
 
-Example ~/.adjustments Configuration File - Place in Your Home Folder
-
-brightness 15 95 5 20
-echo % > /sys/class/backlight/nvidia_0/brightness
+Example ~/.adjustments Configuration File - Place the following four lines
+in ~/.adjustments
 
 gamma 0.1 0.9 0.1 0.5
 xgamma -gamma %
+brightness 15 95 5 20
+echo % > /sys/class/backlight/nvidia_0/brightness
 
 Build Instructions
 g++ adjust.cpp -lcurses -o adjust
