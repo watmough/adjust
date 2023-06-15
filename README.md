@@ -1,6 +1,7 @@
 # adjust - dynamic adjustment for system parameters
 ```
-GNU/Linux CLI utility that permits easy dynamic adjustment for system parameters such as brightness, gamma etc.
+GNU/Linux CLI utility that permits easy dynamic adjustment for system
+parameters such as brightness, gamma etc.
 
 adjust
 
@@ -43,4 +44,13 @@ xgamma -gamma %
 
 Build Instructions
 g++ adjust.cpp -lcurses -o adjust
+
+To provide a regular user with superuser privileges for writing to /dev
+items. [1]
+
+sudo chown root adjust
+sudo chmod +s adjust
+
+[1] Thanks to Dave Munroe at St Andrew Comp.Sci for showing us this, when he
+likely got tired of restarting SunOS NFS lock daemons for us...
 ```
