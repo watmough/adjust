@@ -48,7 +48,7 @@ Build Instructions
 g++ adjust.cpp -lcurses -o adjust
 
 To provide a regular user with superuser privileges for writing to /dev
-items. [1]
+items: [1]
 
 sudo chown root adjust
 sudo chmod +s adjust
