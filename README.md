@@ -56,3 +56,6 @@ sudo chmod u+s adjust
 [1] Thanks to Dave Munroe at St Andrew Comp.Sci for showing us this, when he
 likely got tired of restarting SunOS NFS lock daemons for us...
 ```
+
+[![asciicast](https://asciinema.org/a/S8JioXrIqNMY7EELuw90ZPurv.svg)](https://asciinema.org/a/S8JioXrIqNMY7EELuw90ZPurv)
+
