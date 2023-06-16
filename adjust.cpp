@@ -53,7 +53,7 @@ To provide a regular user with superuser privileges for writing to /dev
 items:
 
 sudo chown root adjust
-sudo chmod +s adjust
+sudo chmod u+s adjust
 
 */
 
@@ -66,6 +66,7 @@ sudo chmod +s adjust
 #include <ostream>
 #include <sstream>
 #include <tuple>
+#include <unistd.h>
 #include <vector>
 
 #define UP 'A'
@@ -85,6 +86,9 @@ double adjust(adjustment _adjustment)
     double value{std::get<4>(_adjustment)};
     std::string command{std::get<5>(_adjustment)};
     int key{0};
+
+    // if we got suid, then this is where we apply them
+    setuid(geteuid());
     do
     {
         // check for q for quit
@@ -216,7 +220,7 @@ int main(int argc, char *argv[])
                 "items:\n"
                 "\n"
                 "sudo chown root adjust\n"
-                "sudo chmod +s adjust\n\n");
+                "sudo chmod u+s adjust\n\n");
         exit(1);
     } else {
         // init curses and get chars as they come in
